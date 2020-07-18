@@ -8,15 +8,18 @@ function Login(){
 
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
+    const [msgTipo, setMsgTipo] = useState();
 
     function logar(){
     
         // .then é o conceito de promisse
         firebase.auth().signInWithEmailAndPassword( email, senha).then( resultado => {
             //entra aqui em caso de sucesso
-            alert("Login realizado com sucesso");
+            //alert("Login realizado com sucesso");
+            setMsgTipo('sucesso');
         } ).catch( erro => {
-            alert(erro);
+            setMsgTipo('erro');
+            //alert(erro);
         } )
         
     }
@@ -33,9 +36,8 @@ function Login(){
             <form className="form-signin mx-auto">
                 <div className="text-center mb-4">
                     <img className="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"/>
-    <h1 className="h3 mb-3 font-weight-normal text-white font-weight-bold">Login</h1>                
+                    <h1 className="h3 mb-3 font-weight-normal text-white font-weight-bold">Login</h1>                
                 </div>
-
                 
                 <input onChange={ (e) => setEmail(e.target.value)} type="email" id="inputEmail" className="form-control my-2" placeholder="Email"/>                
                 <input onChange={ (e) => setSenha(e.target.value)} type="password" id="inputPassword" className="form-control my-2" placeholder="Senha"/>                
@@ -43,9 +45,8 @@ function Login(){
                 <button onClick={logar} class="btn btn-lg btn-login btn-block" type="button">Logar</button>
 
                 <div className="msg-login text-white text-center my-5">
-                    <span><strong>WOW!</strong> Você está conectado! &#128526;</span>
-                    <br></br>
-                    <span><strong>Ops!</strong> Verifique se a senha ou usuário estão corretos! &#128545;</span>
+                        {msgTipo === 'sucesso' && <span><strong>WOW!</strong> Você está conectado! &#128526;</span>}
+                        {msgTipo === 'erro' && <span><strong>Ops!</strong> Verifique se a senha ou usuário estão corretos! &#128545;</span>}                                        
                 </div>
 
                 <div className="opcoes-login mt-5 text-center">
