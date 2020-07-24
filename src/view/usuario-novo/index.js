@@ -3,6 +3,7 @@ import './usuario-novo.css';
 
 import firebase from '../../config/firebase';
 import 'firebase/auth';
+import Navbar from '../../components/navbar/';
 
 function NovoUsuario(){
 
@@ -34,6 +35,8 @@ function NovoUsuario(){
     }
 
     return(
+        <>
+        <Navbar></Navbar>
         <div className="form-cadastro">
             <form className="text-center form-login mx-auto mt-5">
                 <h1 className="h3 mb-3 text-black font-weght-bolt">Cadastro</h1>
@@ -53,6 +56,7 @@ function NovoUsuario(){
                 
             </form>
         </div>
+        </>
     )
 
 }
