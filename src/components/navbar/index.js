@@ -5,10 +5,10 @@ import {Link} from 'react-router-dom';
 
 function Navbar(){
     return(
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-dark">
             <span className="navbar-brand text-white font-weight-bold">Eventos</span>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="far fa-bars text-white"></i>             
+            <button className="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-white"></span>               
             </button>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
