@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom';
 
 import { useSelector, useDispatch} from 'react-redux';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 function Navbar(){
 
     const dispatch = useDispatch();
@@ -12,7 +14,7 @@ function Navbar(){
     return(
         <nav className="navbar navbar-expand-lg navbar-light" background-color="#e3f2fd;">
 
-            <span className="navbar-brand text-white font-weight-bold">Eventos</span>
+            <span className="navbar-brand font-weight-bold"><FontAwesomeIcon icon="coffee" size="2x" /></span>
             <button className="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon text-white"></span>               
             </button>

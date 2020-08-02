@@ -8,6 +8,8 @@ import 'firebase/auth';
 
 import { useSelector, useDispatch} from 'react-redux';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 function Login(){
 
     const [email, setEmail] = useState();
@@ -52,6 +54,7 @@ function Login(){
             <form className="form-signin mx-auto">
                 <div className="text-center mb-4">
                     <img className="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"/>
+                    <FontAwesomeIcon icon="coffee" size="2x" />
                     <h1 className="h3 mb-3 font-weight-normal text-white font-weight-bold">Login</h1>                
                 </div>
                 
@@ -66,9 +69,9 @@ function Login(){
                 </div>
 
                 <div className="opcoes-login mt-5 text-center">
-                    <a href="#" className="mx-2"> Recuperar Senha</a>
+                    <Link to="/usuariorecuperarsenha" className="mx-2"> Recuperar Senha</Link>
                     <span className="text-white">&#9733;</span>
-                    <Link to='novousuario' className='mx-2'>Quero Cadastrar</Link>
+                    <Link to='novousuario' className='mx-2'>Quero Cadastrar</Link>                    
                     {/* <a href="#" className="mx-2">Quero Cadastrar</a> */}
                 </div>
                
